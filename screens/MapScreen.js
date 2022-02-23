@@ -1,7 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
 import tw from "twrnc";
-
+import Map from "../components/Map";
+import MapView from "react-native-maps";
 const MapScreen = () => {
   return (
     <SafeAreaView style={tw`bg-white h-full`}>
@@ -17,6 +18,11 @@ const MapScreen = () => {
           }}
         />
       </View>
+
+      <View style={tw`h-1/2`}>
+        <Map />
+      </View>
+      <View style={tw`h-1/2`}></View>
     </SafeAreaView>
   );
 };
