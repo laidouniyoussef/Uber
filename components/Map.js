@@ -27,7 +27,7 @@ const Map = () => {
 
     const getTravelTime = async () => {
       fetch(
-        `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin.description}&destinations=${destination.description}&key=${GOOGLE_MAPS_APIKEYS}`
+        `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin.description}&destinations;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;=${destination.description}&key=${GOOGLE_MAPS_APIKEYS}`
       )
         .then((res) => res.json())
         .then((data) => {
