@@ -23,8 +23,6 @@ const NavigateCard = () => {
             styles={styles}
             enablePoweredByContainer={false}
             onPress={(data, details = null) => {
-              console.log(details.geometry.location);
-
               dispatch(
                 setDestination({
                   location: details.geometry.location,
