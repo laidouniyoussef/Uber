@@ -33,7 +33,7 @@ const data = [
     image: "https://links.papareact.com/7pf",
   },
 ];
-
+const SURGE_CHARGE_RATE = 1.5;
 const RideOptionsCard = () => {
   const navigation = useNavigation();
   const [selected, setSelected] = useState(null);
@@ -64,8 +64,8 @@ const RideOptionsCard = () => {
           >
             <Image
               style={{
-                width: 80,
-                height: 80,
+                width: 65,
+                height: 65,
                 resizeMode: "contain",
               }}
               source={{ uri: image }}
@@ -75,11 +75,21 @@ const RideOptionsCard = () => {
               <Text>{TravelTimeInformation?.duration.text} </Text>
             </View>
 
-            <Text style={tw`text-xl`}>£ 99</Text>
+            <Text style={tw`text-xl`}>
+              {new Intl.NumberFormat("en-gb", {
+                style: "currency",
+                currency: "MAD",
+              }).format(
+                (TravelTimeInformation?.duration.value *
+                  SURGE_CHARGE_RATE *
+                  multiplier) /
+                  100
+              )}
+            </Text>
           </TouchableOpacity>
         )}
       />
-      <View>
+      <View style={tw`mt-auto border-t border-gray-200`}>
         <TouchableOpacity
           disabled={!selected}
           style={tw`bg-gray-800 py-3 m-3 rounded-md ${
