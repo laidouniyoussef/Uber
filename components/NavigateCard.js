@@ -7,14 +7,16 @@ import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplet
 import { setDestination } from "../slices/navSlice";
 import { useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
+import NavFavorites from "./NavFavorites";
 
 const NavigateCard = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   return (
     <SafeAreaView style={tw`bg-white flex-1`}>
-      <Text style={tw`text-center py-5 text-xl font-bold`}> HELLOOOO </Text>
-      <View style={tw`border-t border-gray-200 flex-shrink`}>
+      {/* <Text style={tw`text-center py-5 text-xl`}> HELLOOOO </Text> */}
+      <View>
+        {/* style={tw`border-t border-gray-200 flex-shrink`} */}
         <View>
           <GooglePlacesAutocomplete
             placeholder="Fin ?"
@@ -43,6 +45,7 @@ const NavigateCard = () => {
             debounce={400}
           />
         </View>
+        <NavFavorites />
       </View>
     </SafeAreaView>
   );
