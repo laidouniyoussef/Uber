@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import tw from "twrnc";
 
-const NavigateCard = () => {
+const RideOptionsCard = () => {
   return (
     <View>
       <Text>YO</Text>
@@ -10,5 +10,5 @@ const NavigateCard = () => {
   );
 };
 
-export default NavigateCard;
+export default RideOptionsCard;
 const styles = StyleSheet.create({});
