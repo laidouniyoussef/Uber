@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, Image,TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import tw from "twrnc";
 import NavOptions from "../components/NavOptions";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
@@ -29,6 +36,8 @@ const HomeScreen = () => {
           styles={styles}
           enablePoweredByContainer={false}
           onPress={(data, details = null) => {
+            console.log(data.description);
+            console.log(details.geometry);
             dispatch(
               setOrigin({
                 location: details.geometry.location,

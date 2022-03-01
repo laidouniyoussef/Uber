@@ -78,7 +78,7 @@ const RideOptionsCard = () => {
             <Text style={tw`text-xl`}>
               {new Intl.NumberFormat("en-gb", {
                 style: "currency",
-                currency: "MAD",
+                currency: "EUR",
               }).format(
                 (TravelTimeInformation?.duration.value *
                   SURGE_CHARGE_RATE *

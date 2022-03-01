@@ -1,24 +1,31 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import tw from "twrnc";
 import Map from "../components/Map";
 import NavigateCard from "../components/NavigateCard";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import RideOptionsCard from "../components/RideOptionsCard";
-import {Icon} from "react-native-elements/dist/icons/Icon"
+import { Icon } from "react-native-elements/dist/icons/Icon";
 import { useNavigation } from "@react-navigation/native";
 
 const MapScreen = () => {
   const Stack = createNativeStackNavigator();
-const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <View>
-
-    <TouchableOpacity 
-    onPress={() => navigation.navigate('HomeScreen')}
-    style={tw`bg-gray-100 absolute top-16 left-8 z-50 rounded-full shadow-lg`}>
-<Icon name="menu"/>
-    </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("HomeScreen")}
+        style={tw`bg-gray-100 absolute top-16 left-8 z-50 rounded-full shadow-lg`}
+      >
+        <Icon name="menu" />
+      </TouchableOpacity>
       <View style={tw`h-1/2`}>
         <Map />
       </View>
